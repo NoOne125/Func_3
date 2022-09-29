@@ -29,28 +29,24 @@ length list =
     then 0
     else 1 + (length ( fromMaybe Nil (tail list)))
 
-firstTask :: Int
-firstTask = 12
+first :: String
+first = "Cat"
 
-secondList :: List Int
-secondList = Nil
+second :: List String
+second = "Cat" : "Dog" : Nil
 
-secondListNotEmpty :: List Int
-secondListNotEmpty = 10 : 5: Nil
+third :: List String
+third = "Cat" : "Dog" : "Rat" : Nil
 
-thirdList :: List String
-thirdList = "List" : "is" : "full" : Nil
+insert :: String
+insert = "are a Pets"
 
-insertLastElement :: String
-insertLastElement = "of arguments"
-
-fourthTask :: List String
-fourthTask = "Some" : "sort of" : "array" : Nil
+fourth :: List Int
+fourth = 1123 : 4512 : 14 : 145678 : 9247 : Nil
 
 main :: Effect Unit
 main = do
-  log ("Result of the task 1:" <> show (singleton firstTask))
-  log ("Result of the task 2.0:" <> show (null secondList))
-  log ("Result of the task 2.1:" <> show (null secondListNotEmpty))
-  log ("Result of the task 3:" <> show (snoc thirdList insertLastElement))
-  log ("Result of the task 4:" <> show (length fourthTask))
+  log ("Task 1: " <> show (singleton first))
+  log ("Task 2: " <> show (null second))
+  log ("Task 3: " <> show (snoc third insert))
+  log ("Task 4: " <> show (length fourth))
